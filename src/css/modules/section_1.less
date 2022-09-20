@@ -1,6 +1,135 @@
 .section_cover{
     width: 100%;
-    min-height: 500px;
+    max-height: 500px;
     display: flex;
     background: url('../img/background.png') center / cover no-repeat;
+
+    h1{
+        font-size: 64px;
+        font-family: montserrat;
+        font-weight: bold;
+        color: #fff;
+        max-width: 855px;
+        padding: 10px 0;
+    }
+    
+    &_forms{
+        margin: 10px 0;
+
+        .section_cover_form{
+            max-width: 870px;
+            height: 380px;
+            background-color: antiquewhite;
+            border-radius: 15px;
+            padding: 10px;
+             .wrapper_form{
+                max-width: 780px;
+                margin: 0 auto;
+             }
+            
+            .radio{
+                display: flex;
+                flex-direction: column;
+            }
+            .style_radio{
+                display: flex;
+            }
+            .form_radio {
+                input[type=radio]{
+                    display: none;
+                    &:checked {
+                        + label>.round {
+                            &::before{
+                                border-color: black;
+                                font-size: 5px;
+                            }
+                            &::after {
+                                background: black;
+                            }
+
+                        }
+                    }
+                }
+                label{
+                    display: flex;
+                    cursor: pointer;
+                    position: relative;
+                    padding-left: 25px;
+                    margin-right: 60px;
+                    line-height: 18px;
+                    user-select: none;
+                    margin-left: 0;
+                    
+                    >.round {
+                        position: absolute;
+                        left: 0;
+                        width: 18px;
+                        height: 18px;
+                        &::before{
+                            content: "";
+                            display: inline-block;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            border: 1px solid black;
+                            border-radius: 100%;
+                            background: #fff;
+                        }
+                        &::after{
+                            content: "";
+                            display: inline-block;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: calc(100% - 8px);
+                            height: calc(100% - 8px);
+                            position: absolute;
+                            border-radius: 100%;
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+            .style_check{
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 400px;
+                .form_checkbox{
+                    width: 50%;
+                    margin-bottom: 10px;
+                }
+                input[type=checkbox]{
+                    display: none;
+                }
+
+                input[type=checkbox] + label:before {
+                    content: "\2714";
+                    color: transparent;
+                    display: inline-block;
+                    border: 1px solid black;
+                    font-size: 20px;
+                    font-weight: 900;
+                    line-height: 22px;
+                    margin: 0 5px 0 0;
+                    height: 20px;
+                    width: 20px;
+                    text-align: center;
+                    vertical-align: middle;
+                    &:nth-child(3){
+                        margin: 5px 5px 0 0;
+                    }
+                }
+
+                input[type=checkbox]:checked + label:before {
+                    color: #000;
+                    border-color: #000;
+                }
+            }
+        }
+    }
+    
 }
+
