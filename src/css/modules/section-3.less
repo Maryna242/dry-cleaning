@@ -1,5 +1,5 @@
 .section_square{
-
+    display: flex;
     &_items{
         display: flex;
         width: 50%;
@@ -19,9 +19,39 @@
                 margin: 15px;
             }
             &_title{
+                
+                p{
+                    font-size: 14px;
+                    font-family: montserrat;
+                    color: rgba(148, 96, 252, 0.993);
+                }
+            }
+            &_p{
+                p{
+                    font-size: 15px;
+                    font-family: montserrat;
+                    text-align: center;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+    &_item_right{
+        margin: 10px;
+        .clean{
+            color: red;
+        }
+        &_block{
+            display: flex;
+            margin: 20px 0;
+            a{
+                color: black;
+                padding: 15px;
+                border: 3px solid red;
+                background-color: lightcyan;
+                border-radius: 5px;
                 font-size: 14px;
                 font-family: montserrat;
-                color: rgba(148, 96, 252, 0.993);
             }
         }
     }

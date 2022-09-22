@@ -1,0 +1,24 @@
+.section_text{
+    display: flex;
+    &_left{
+        width: 50%;
+        &_img{
+            display: flex;
+            max-height: 580px;
+            img{
+                object-fit: cover;
+                object-position: left;
+                border-radius: 15px;
+                padding: 10px 10px 10px 0px;
+            }
+        }
+    }
+    &_right{
+        &_test{
+            padding: 10px 0 10px 10px;
+            h2{
+                font-size: 34px;
+            }
+        }
+    }
+}
