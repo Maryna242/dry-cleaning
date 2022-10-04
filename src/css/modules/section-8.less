@@ -5,6 +5,12 @@
     background: url('../img/cleaning.png') center / cover no-repeat;
     .column{
         flex-direction: row;
+        @media(max-width: 625px){
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+        }
     }
     &_left{
         display: flex;
@@ -14,7 +20,24 @@
         h1{
             font-size: 56px;
             font-family: montserrat;
+            @media(max-width: 780px){
+                font-size: 34px;
+            }
         }
+        .const{
+            font-size: 42px;
+            font-family: montserrat;
+            font-weight: normal;
+            max-width: 530px;
+            margin-bottom: 10px;
+            @media(max-width: 845px){
+                font-size: 32px;
+            }
+            @media(max-width: 780px){
+                font-size: 24px;
+            }
+        }
+        
     }
     &_right{
         display: flex;
