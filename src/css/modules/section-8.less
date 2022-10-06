@@ -13,10 +13,13 @@
         }
     }
     &_left{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
+        // display: flex;
+        // flex-direction: column;
+        // flex-wrap: wrap;
+        // justify-content: center;
+        @media (max-width: 780px) {
+            margin-top: 25px;
+        }
         h1{
             font-size: 56px;
             font-family: montserrat;
@@ -39,44 +42,38 @@
         }
         
     }
-    &_right{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        &_form{
-            max-width: 340px;
-            min-height: auto;
+    &_form{
+        max-width: 340px;
+        min-height: auto;
+        background-color: #fff;
+        border-radius: 20px;
+        opacity: 0.8;
+        padding: 20px;
+        width: 100%;
+        .form_name{
+            margin-top: 5px;
+        }
+        .shape{
+            border: none;
+            border-bottom: 1px solid black;
+            padding: 10px;
+            font-size: 15px;
+            font-family: montserrat;
+            display: flex;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .form_submit{
             background-color: #fff;
+            padding: 10px;
+            border: 3px solid rgb(197, 35, 35);
+            font-size: 16px;
+            font-family: montserrat;
             border-radius: 20px;
-            opacity: 0.8;
-            padding: 20px;
-            width: 380px;
-            .form_name{
-                margin-top: 5px;
-            }
-            .shape{
-                border: none;
-                border-bottom: 1px solid black;
-                padding: 10px;
-                font-size: 15px;
-                font-family: montserrat;
-                display: flex;
-                width: 100%;
-                margin-bottom: 5px;
-            }
-            .form_submit{
-                background-color: #fff;
-                padding: 10px;
-                border: 3px solid rgb(197, 35, 35);
-                font-size: 16px;
-                font-family: montserrat;
-                border-radius: 20px;
-                margin: 20px 0;
-                &:hover{
-                    box-shadow: 0 3px 15px rgb(0 0 0 / 40%);
-                }
+            margin: 20px 0;
+            &:hover{
+                box-shadow: 0 3px 15px rgb(0 0 0 / 40%);
             }
         }
     }
-    
 }

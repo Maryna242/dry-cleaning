@@ -1,49 +1,59 @@
 header{
+    >.wrapper {
+        @media (max-width: 640px) {
+            padding: 10px 25px;
+        }
+    }
     .menu{
         display: flex;
         .navIcon{
             display: none;
             #nav-icon1 {
-                width: 40px;
-                height: 30px;
-                position: relative;
-                margin: 30px auto;
+                width: 30px;
+                height: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                // position: relative;
+                margin: 10px auto;
                 transform: rotate(0deg);
                 transition: .5s ease-in-out;
                 cursor: pointer;
             }
             #nav-icon1 span {
                 display: block;
-                position: absolute;
+                // position: absolute;
                 height: 3px;
                 width: 100%;
                 background: #337AB7;
                 border-radius: 9px;
                 opacity: 1;
-                left: 0;
+                // left: 0;
                 transform: rotate(0deg);
                 transition: .25s ease-in-out;
             }
-            #nav-icon1 span:nth-child(1) {
-                top: 0px;
-            }
-            #nav-icon1 span:nth-child(2) {
-                top: 10px;
-            }
-            #nav-icon1 span:nth-child(3) {
-                top: 20px;
-            }
+            // #nav-icon1 span:nth-child(1) {
+            //     top: 0px;
+            // }
+            // #nav-icon1 span:nth-child(2) {
+            //     top: 10px;
+            // }
+            // #nav-icon1 span:nth-child(3) {
+            //     top: 20px;
+            // }
             #nav-icon1.open span:nth-child(1) {
-                top: 10px;
-                transform: rotate(135deg);
+                // top: 10px;
+                // transform: rotate(135deg);
+                transform: rotate(135deg) translate(6px, -7px);
             }
             #nav-icon1.open span:nth-child(2) {
                 opacity: 0;
-                left: -60px;
+                // transform: translateX(30px);
             }
             #nav-icon1.open span:nth-child(3) {
-                top: 10px;
-                transform: rotate(-135deg);
+                // top: 10px;
+                // transform: rotate(-135deg);
+                transform: rotate(-135deg) translate(5px, 6px);
             }
             @media (max-width: 480px){
                 display: block;

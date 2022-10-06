@@ -2,12 +2,18 @@
     display: flex;
     gap: 20px;
     justify-content: space-evenly;
+    @media (max-width: 640px) {
+        display: initial;
+    }
     .test{
         max-width: 390px;
     }
     &_right{
         display: flex;
         gap: 50px;
+        @media (max-width: 380px) {
+            display: initial;
+        }
         h3{
             font-size: 25px;
             font-family: montserrat;

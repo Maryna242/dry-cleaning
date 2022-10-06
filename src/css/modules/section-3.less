@@ -1,12 +1,17 @@
 .section_square{
     display: flex;
+    @media (max-width: 640px) {
+        flex-direction: column-reverse;
+    }
     &_items{
-        display: flex;
-        width: 50%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         flex-wrap: wrap;
         gap: 20px;
+        @media (max-width: 540px) {
+            grid-template-columns: 1fr;
+        }
         &_left{
-            width: 200px;
             min-height: 250px;
             border: 2px solid rgba(195, 172, 247, 0.76);
             border-radius: 15px;
@@ -37,7 +42,9 @@
         }
     }
     &_item_right{
-        margin: 10px;
+        @media (max-width: 768px) {
+            order: -1;            
+        }
         .clean{
             color: red;
         }
@@ -51,6 +58,11 @@
                 border-radius: 15px;
                 font-size: 14px;
                 font-family: montserrat;
+            }
+        }
+        .text_content {
+            @media (max-width: 768px) {
+                display: none;
             }
         }
     }

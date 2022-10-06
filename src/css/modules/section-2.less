@@ -1,16 +1,21 @@
 .section_content{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
     &_img{
         height: 100%;
-        width: 50%;
         display: flex;
         min-height: 400px;
+        @media (max-width: 768px) {
+            min-height: 300px;
+            margin-bottom: 20px;
+        }
         img{
             object-fit: cover;
             object-position: left;
         }
-    }
-    .content_text{
-        margin-left: 20px;
     }
 }
