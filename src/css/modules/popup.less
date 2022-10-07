@@ -1,0 +1,45 @@
+.inform{
+	&-popup{
+		display: none;
+	}
+}
+.custom-fancybox{
+	.fancybox-bg{
+		background: #f8f8f845;
+	}
+	.fancybox-button{
+		display: none;
+	}
+    .inform{
+		&-popup{
+			width: 100%;
+			max-width: 550px;
+			height: 382px;
+			padding: 0;
+			overflow: hidden;
+			border-radius: 32px;
+			box-shadow: 6px 10px 24px rgba(0, 0, 0, 0.11);
+            .text_content {
+                text-align: center;
+            }
+			@media (max-width:1024px) {
+				width: 70%;
+				max-width: 470px;
+				height: 360px;
+			}
+			@media (max-width:480px){
+				width: 92%;
+				height: 350px;
+			}
+		}
+    }
+	.popup-thanks-container{
+		padding: 20px;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}

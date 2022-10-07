@@ -45,8 +45,13 @@ function img(){
          .pipe(gulp.dest('./build/img'))
  }
  function scripts(){
-     return  gulp.src('./src/js/**/*')
-          .pipe(gulp.dest('./build/js'))
+     return  gulp.src([
+            './src/js/vendors/jquery-3.6.0.min.js',
+            './src/js/vendors/*.js',
+            './src/js/script.js'
+            ])
+            .pipe(concat('all.min.js'))
+            .pipe(gulp.dest('./build/js'))
   }
  function html(){
     return  gulp.src('./src/*.html')

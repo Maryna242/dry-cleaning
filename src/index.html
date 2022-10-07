@@ -18,7 +18,7 @@
                         <span></span>
                     </div>
                 </div>
-                <ul>
+                <ul class="nav_list">
                     <li>
                         <a href="#title-3">
                             Порядок проведення роботи
@@ -61,7 +61,7 @@
             </div>
         </section>
         <section class="section_cover_form">
-            <form class="form">
+            <form class="form" id="form_first" method="POST" enctype="multipart/form-data">
                 <div class="wrapper_form">
                     <div class="left">
                         <div class="radio">
@@ -70,21 +70,21 @@
                             </p>
                             <div class="style_radio">
                                 <div class="form_radio">
-                                    <input type="radio" id="radio-1" name="sofa" value="1">
+                                    <input type="radio" id="radio-1" name="type" value="Диван" checked> 
                                     <label for="radio-1">
                                         <span class="round"></span>
                                         Диван
                                     </label>
                                 </div>
                                 <div class="form_radio">
-                                    <input type="radio" id="radio-2" name="armchair" value="2">
+                                    <input type="radio" id="radio-2" name="type" value="Крісло">
                                     <label for="radio-2">
                                         <span class="round"></span>
                                         Крісло
                                     </label>
                                 </div>
                                 <div class="form_radio">
-                                    <input type="radio" id="radio-3" name="mattress" value="3">
+                                    <input type="radio" id="radio-3" name="type" value="Матрац">
                                     <label for="radio-3">
                                         <span class="round"></span>
                                         Матрац
@@ -98,28 +98,28 @@
                             </p>
                             <div class="style_check">
                                 <div class="form_checkbox">
-                                    <input type="checkbox" id="check-1" name="pillow" value="1">
+                                    <input type="checkbox" id="check-1" name="dop_services" value="Подушка">
                                     <label for="check-1">
                                         <span class="check"></span>
                                         Подушка
                                     </label>
                                 </div>
                                 <div class="form_checkbox">
-                                    <input type="checkbox" id="check-2" name="name" value="2">
+                                    <input type="checkbox" id="check-2" name="dop_services" value="Нестандартний диван">
                                     <label for="check-2">
                                         <span class="check"></span>
                                         Нестандартний диван
                                     </label>
                                 </div>
                                 <div class="form_checkbox">
-                                    <input type="checkbox" id="check-3" name="name" value="3">
+                                    <input type="checkbox" id="check-3" name="dop_services" value="Дизинфекція пароочисником">
                                     <label for="check-3">
                                         <span class="check"></span>
                                         Дизинфекція пароочисником
                                     </label>
                                 </div>
                                 <div class="form_checkbox">
-                                    <input type="checkbox" id="check-4" name="name" value="4">
+                                    <input type="checkbox" id="check-4" name="dop_services" value="М'яке узголів'я та обід ліжка">
                                     <label for="check-4">
                                         <span class="check"></span>
                                         М'яке узголів'я та обід ліжка
@@ -137,29 +137,27 @@
                     </div>
                     <div class="right">
                         <div class="form_to_fill">
-                            <form  method ="post" name="test">
-                                <label for="name">
-                                    <span class="form_name">
-                                        Ім'я
+                            <label for="name">
+                                <span class="form_name">
+                                    Ім'я
+                                </span>
+                            </label>
+                            <input class="shape" type="text" id="name" name="name">
+                            <label for="phone">
+                                <span class="form_name">
+                                    Телефон
+                                </span>
+                            </label>
+                            <input class="shape" type="tel" id="form_phone_1" name="phone" placeholder="Ваш телефон">
+                            <div class="left_right">
+                                <p class="price">
+                                    Ціна хімчистки: від  
+                                    <span class="number">
+                                        600 грн
                                     </span>
-                                </label>
-                                <input class="shape" type="text" id="name" name="name">
-                                <label for="phone">
-                                    <span class="form_name">
-                                        Телефон
-                                    </span>
-                                </label>
-                                <input class="shape" type="tel" id="phone" name="name" >
-                                <div class="left_right">
-                                    <p class="price">
-                                        Ціна хімчистки: від  
-                                        <span class="number">
-                                            600 грн
-                                        </span>
-                                    </p>
-                                    <input class="form_submit" type="submit" name="button" value="Замовити">
-                                </div>
-                            </form>
+                                </p>
+                                <input class="form_submit" type="submit" name="button" value="Замовити">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -539,7 +537,7 @@
                                 Телефон
                             </span>
                         </label>
-                        <input class="shape" type="tel" id="phone" name="name" >
+                        <input class="shape" type="tel" id="form_phone_2" name="phone" placeholder="Ваш телефон" >
                         <input class="form_submit" type="submit" name="button" value="Замовити">
                     </form>
                 </div>
@@ -550,10 +548,10 @@
         <div class="wrapper">
             <div class="footer_block">
                 <div class="footer_block_left">
-                    <h2>
+                    <h3>
                         Про нас
-                    </h2>
-                    <p class="text_content test">
+                    </h3>
+                    <p class="text_content text">
                         Знаємо про хімчистку та прибирання все, 
                         завдяки багаторічному досвіду та прагненню пізнавати нове та розвиватися;
                         гарантуємо якість виконання будь-якої послуги, незалежно від її обсягу та складності;
@@ -590,7 +588,13 @@
             </div>
         </div>
     </footer>
-    <script src="./js/jquery-3.6.0.min.js"></script>
-    <script src="./js/script.js"></script>
+    <div id="popup_thanks" class="inform-popup">
+        <div class="popup-thanks-container">
+            <h2>Дякуємо за заявку!</h2>
+            <p class="text_content">Найближчим часом з Вами зв'яжеться менеджер</з>
+        </div>
+    </div>
+    <!-- <script src="./js/jquery-3.6.0.min.js"></script> -->
+    <script src="./js/all.min.js"></script>
 </body>
 </html>

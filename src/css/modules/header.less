@@ -1,4 +1,5 @@
 header{
+    position: relative;
     >.wrapper {
         @media (max-width: 640px) {
             padding: 10px 25px;
@@ -6,8 +7,14 @@ header{
     }
     .menu{
         display: flex;
+        padding: 15px;
         .navIcon{
             display: none;
+            margin-left: auto;
+            z-index: 6;
+            @media (max-width: 768px) {
+                display: block;
+            }
             #nav-icon1 {
                 width: 30px;
                 height: 20px;
@@ -32,44 +39,55 @@ header{
                 transform: rotate(0deg);
                 transition: .25s ease-in-out;
             }
-            // #nav-icon1 span:nth-child(1) {
-            //     top: 0px;
-            // }
-            // #nav-icon1 span:nth-child(2) {
-            //     top: 10px;
-            // }
-            // #nav-icon1 span:nth-child(3) {
-            //     top: 20px;
-            // }
-            #nav-icon1.open span:nth-child(1) {
-                // top: 10px;
-                // transform: rotate(135deg);
-                transform: rotate(135deg) translate(6px, -7px);
-            }
-            #nav-icon1.open span:nth-child(2) {
-                opacity: 0;
-                // transform: translateX(30px);
-            }
-            #nav-icon1.open span:nth-child(3) {
-                // top: 10px;
-                // transform: rotate(-135deg);
-                transform: rotate(-135deg) translate(5px, 6px);
-            }
             @media (max-width: 480px){
                 display: block;
             }
         }
         ul{
             display: flex;
-            padding-top: 20px;
+            @media (max-width:768px) {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                transform: translateY(-100%);
+                transition: transform 0.5s;
+                background-color: #fff;
+                box-shadow: 0 0 10px 1px rgb(0 0 0 / 10%);
+                flex-direction: column;
+                z-index: 5;                
+                padding: 20px 0;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
             li{
                 list-style-type: none;
                 font-size: 16px;
                 font-family: montserrat;
                 padding: 15px;
+                font-weight: 600;
             }
-            @media (max-width: 480px){
-                display: none;
+        }
+        &.open {
+            min-height: 70px;
+            ul {
+                transform: translateY(0);
+            }
+            #nav-icon1 {
+                position: fixed;
+                right: 40px;
+                top: 25px;
+                span {
+                    &:nth-child(1) {
+                        transform: rotate(135deg) translate(6px, -7px);
+                    }
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+                    &:nth-child(3) {
+                        transform: rotate(-135deg) translate(5px, 6px);
+                    }
+                }
             }
         }
         
