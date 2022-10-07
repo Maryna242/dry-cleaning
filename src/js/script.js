@@ -46,10 +46,8 @@ function maskedPhone(){
 	firstSectionFormPhone.mask("+38 (000) 000-0000");
 	footerSectionFormPhone.mask("+38 (000) 000-0000");
 }
-//Валидация формы подвала
-function footerFormValidate(){
-	let form = $('#form_first');
-	form.validate({
+function validate (form) {
+    form.validate({
 		rules: {
 			"phone": {
 				required: true,
@@ -89,4 +87,11 @@ function footerFormValidate(){
 			return false;
 		}
 	});
+}
+//Валидация формы подвала
+function footerFormValidate(){
+	let form_first = $('#form_first');
+	let form_second = $('#form_second');
+	validate(form_first)
+	validate(form_second)
 }
