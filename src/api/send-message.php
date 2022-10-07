@@ -1,7 +1,7 @@
 <?php
  
 // Токен
-  const TOKEN = '5612194986:AAFI6Gj-_D9piQspjTh6AJn8mXtW1PxB6Go';
+  const TOKEN = '';
  
   // ID чата
   const CHATID = '-867507503';
