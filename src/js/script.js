@@ -69,19 +69,30 @@ function validate (form) {
 		submitHandler:	function(e){
 			$.ajax({
 				type: "POST",
-				url: "/send-message.php",
+				url: "/api/send-message.php",
 				data: form.serialize(),
 				success: function(res) {
-                    console.log(res);
-					$.fancybox.open({
-						src: '#popup_thanks',
-						opts: {
-							smallBtn: false,
-							baseClass: 'custom-fancybox',
-							touch: false,
-							hideScrollbar: false,							
-						}
-					});
+					if (!Number(res)) {
+						$.fancybox.open({
+							src: '#popup_error',
+							opts: {
+								smallBtn: false,
+								baseClass: 'custom-fancybox',
+								touch: false,
+								hideScrollbar: false,							
+							}
+						});
+					} else {
+						$.fancybox.open({
+							src: '#popup_thanks',
+							opts: {
+								smallBtn: false,
+								baseClass: 'custom-fancybox',
+								touch: false,
+								hideScrollbar: false,							
+							}
+						});
+					}
 				}
 			});
 			return false;
