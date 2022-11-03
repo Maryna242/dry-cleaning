@@ -6,31 +6,26 @@ const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
-// const uncss = require('gulp-uncss');
+const uncss = require('gulp-uncss');
 const gcmq = require('gulp-group-css-media-queries');
 const less = require('gulp-less');
 const smartgrid = require('smart-grid');
 
-
-const isDev = true;
+const isDev = (process.argv.indexOf('--dev') !== -1);
 const isProd = !isDev;
-const isSync = true;
-
-
-let cssFiles = [
-    ''
-]
+const isSync = (process.argv.indexOf('--sync') !== -1);
 
 function styles(){
    return  gulp.src('./src/css/styles.less')
         .pipe(gulpif(isDev, sourcemaps.init()))
         .pipe(less())
         // .pipe(concat('style.css'))
-        // .pipe(uncss({
-        //     html: ['./src/index.html', './src /**/*.html']
-        // }))
+        .pipe(uncss({
+            html: ['./src/index.html']
+        }))
         .pipe(gcmq())
         .pipe(autoprefixer({
+            overrideBrowserslist: ['> 0.1%'],
             cascade: false
         }))
         .pipe(gulpif(isProd, cleanCSS({

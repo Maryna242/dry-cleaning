@@ -21,7 +21,8 @@
     "smart-grid": "^2.1.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp watch --dev --sync",
+    "build": "gulp build"
   },
   "keywords": [],
   "author": "",
