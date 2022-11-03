@@ -1,5 +1,6 @@
 header{
     position: relative;
+    background: #f2f2f2;
     >.wrapper {
         @media (max-width: 640px) {
             padding: 10px 25px;
@@ -7,7 +8,36 @@ header{
     }
     .menu{
         display: flex;
-        padding: 15px;
+        justify-content: center;
+        min-height: 40px;
+        .nav_logo {
+            &--container {
+                // display: none;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                @media (max-width: 768px) {
+                    flex-grow: 1;
+                }
+                span {
+                    position: relative;
+                    font-size: 14px;
+                    padding-left: 10px;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        width: 2px;
+                        background: #242424;
+                    }
+                }
+                img {
+                    max-width: 50px;
+                }
+            }
+        }
         .navIcon{
             display: none;
             margin-left: auto;
@@ -46,7 +76,7 @@ header{
         ul{
             display: flex;
             justify-content: center;
-            width: 100%;
+            // width: 100%;
             @media (max-width:768px) {
                 position: fixed;
                 top: 0;
@@ -65,20 +95,20 @@ header{
             li{
                 list-style-type: none;
                 font-size: 16px;
-                font-family: 'Poppins', sans-serif;
+                font-family: 'Playfair Display', sans-serif;
                 padding: 15px;
                 font-weight: 600;
             }
         }
         &.open {
-            min-height: 70px;
+            // min-height: 70px;
             ul {
                 transform: translateY(0);
             }
             #nav-icon1 {
                 position: fixed;
-                right: 40px;
-                top: 25px;
+                right: 25px;
+                top: 10px;
                 span {
                     &:nth-child(1) {
                         transform: rotate(135deg) translate(6px, -7px);
