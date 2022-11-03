@@ -6,7 +6,7 @@ const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
-const uncss = require('gulp-uncss');
+// const uncss = require('gulp-uncss');
 const gcmq = require('gulp-group-css-media-queries');
 const less = require('gulp-less');
 const smartgrid = require('smart-grid');
@@ -20,9 +20,9 @@ function styles(){
         .pipe(gulpif(isDev, sourcemaps.init()))
         .pipe(less())
         // .pipe(concat('style.css'))
-        .pipe(uncss({
-            html: ['./src/index.html']
-        }))
+        // .pipe(uncss({
+        //     html: ['./src/index.html']
+        // }))
         .pipe(gcmq())
         .pipe(autoprefixer({
             overrideBrowserslist: ['> 0.1%'],
