@@ -4,7 +4,7 @@
   const TOKEN = '5612194986:AAFI6Gj-_D9piQspjTh6AJn8mXtW1PxB6Go';
 
   // ID чата
-  const CHATID = '-867507503';
+  const CHATID = '-1001807204191';
  
   // Массив допустимых значений типа файла.
   $types = array('image/gif', 'image/png', 'image/jpeg', 'application/pdf');
