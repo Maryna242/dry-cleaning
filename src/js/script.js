@@ -7,7 +7,7 @@ $(function(){
 })
 
 function scrollTo() {
-    $('.menu a').on('click', function(e){
+    $('.menu ul a').on('click', function(e){
         e.preventDefault();
         
         let selector = $(this).attr('href');
