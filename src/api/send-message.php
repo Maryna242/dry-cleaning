@@ -1,17 +1,36 @@
 <?php
  
 // Токен
-  const TOKEN = '5612194986:AAFI6Gj-_D9piQspjTh6AJn8mXtW1PxB6Go';
+    const TOKEN = '5612194986:AAFI6Gj-_D9piQspjTh6AJn8mXtW1PxB6Go';
 
-  // ID чата
-  const CHATID = '-1001807204191';
- 
-  // Массив допустимых значений типа файла.
-  $types = array('image/gif', 'image/png', 'image/jpeg', 'application/pdf');
- 
-  // Максимальный размер файла в килобайтах
-  // 1048576; // 1 МБ
-  $size = 1073741824; // 1 ГБ
+    // ID чата
+    const CHATID = '-1001807204191';
+    
+    // Массив допустимых значений типа файла.
+    $types = array('image/gif', 'image/png', 'image/jpeg', 'application/pdf');
+    
+    // Максимальный размер файла в килобайтах
+    // 1048576; // 1 МБ
+    $size = 1073741824; // 1 ГБ
+    function processPhoneNumber($phoneNumber)
+    {
+        // Удаляем все символы, кроме цифр
+        $phoneNumber = preg_replace('/[^0-9]/', '', $phoneNumber);
+
+        // Если номер телефона начинается с +38, заменяем его на +380
+        if (strpos($phoneNumber, '+38') === 0) {
+            $phoneNumber = '+380' . substr($phoneNumber, 3);
+        }
+
+        // Если номер телефона не начинается с "+", добавляем его
+        if (strpos($phoneNumber, '+') !== 0) {
+            $phoneNumber = '+' . $phoneNumber;
+        }
+
+        // Возвращаем обработанный номер телефона
+        return $phoneNumber;
+    }
+
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
@@ -33,6 +52,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Номер телефона
         if (isset($_POST['phone']) && !empty($_POST['phone'])) {
             $txt .= "Телефон: " . strip_tags(trim(urlencode($_POST['phone']))) . "%0A";
+        }
+        // Номер телефона
+        if (isset($_POST['phone']) && !empty($_POST['phone'])) {
+            $txt .= "Телефон link: " . urlencode('<a href="' . processPhoneNumber($_POST['phone']) . '">' . processPhoneNumber($_POST['phone']) . '</a>') . "%0A";
         }
 
         // Тип
@@ -103,8 +126,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo 1;
         } else {
             echo 0;
-            $log = date('Y-m-d H:i:s') . ' неудалось отправить форму';
-            file_put_contents(__DIR__ . '/log.txt', $log . PHP_EOL, FILE_APPEND);
+            $log = date('Y-m-d H:i:s') . ' неудалось отправить форму: ';
+            file_put_contents(__DIR__ . '/log.txt', $log . $txt . PHP_EOL, FILE_APPEND);
 
             // 
             // echo json_decode($textSendStatus);
